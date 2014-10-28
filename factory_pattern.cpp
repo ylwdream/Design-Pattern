@@ -5,6 +5,7 @@ protected://使用保护成员，子类可以访问。子类不能访问私有�
     double rhs;
 public:
     double virtual getResult()=0;//纯虚函数
+    virtual ~oper();
     void set_lhs(double lhs){this->lhs=lhs;}
     void set_rhs(double rhs){this->rhs=rhs;}
 };
@@ -15,6 +16,7 @@ public:
     double getResult(){
         return lhs+rhs;
     }
+     ~oper_add(){}
 };
 
 class oper_minus:public oper
@@ -23,6 +25,7 @@ public:
     double getResult(){
         return lhs-rhs;
     }
+    ~oper_minus(){}
 };
 
 class factory
